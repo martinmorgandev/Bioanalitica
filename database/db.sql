@@ -1,0 +1,10 @@
+-- table paciete
+CREATE TABLE pacientes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    edad INT NOT NULL,
+    sexo VARCHAR(10) NOT NULL,
+    fecha TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    medico VARCHAR(100) NOT NULL,
+    diagnostico VARCHAR(200)
+);
