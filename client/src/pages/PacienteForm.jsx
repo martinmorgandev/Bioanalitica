@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
+import React, {useState } from 'react'
 import {createPacienteRequest} from "../api/pacientes.api"
+import { usePaciente } from '../context/PacienteContext';
+import { useParams } from 'react-router-dom';
 
 function PacienteForm() {
+  const params = useParams()
+  // console.log(params)
+
+  const {createNewPaciente} = usePaciente()
 
   const [nombre, setnombre] = useState('');
   const [edad, setedad] = useState('');
   const [sexo, setsexo] = useState('');
   const [medico, setmedico] = useState('');
   const [diagnostico, setdiagnostico] = useState('');
+
 
   const clear = () => {
     setnombre('')
@@ -17,15 +24,20 @@ function PacienteForm() {
     setdiagnostico('')
   }
 
+  
+
   const onSubmit = async (e) => {
     e.preventDefault()
-    try {
-      const result = await createPacienteRequest({nombre, edad, sexo, medico, diagnostico})
-      console.log(result)
-      clear()
-    } catch (error) {
-      console.log(error)
-    }
+    // setObjeto()
+    console.log(nombre)
+    createNewPaciente({
+      nombre: nombre,
+      edad: edad,
+      sexo: sexo,
+      medico: medico,
+      diagnostico: diagnostico
+    })
+    clear()
   }
   
   const onChange = (e) => {
@@ -42,6 +54,7 @@ function PacienteForm() {
     }
   }
 
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -53,6 +66,7 @@ function PacienteForm() {
         <button type='submit'>Enviar</button>
       </form>
     </div>
+    
   )
 }
 

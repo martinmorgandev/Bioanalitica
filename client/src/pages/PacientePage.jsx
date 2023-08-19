@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState} from 'react'
 import { getPacientesRequest } from '../api/pacientes.api'
 import PacienteCard from '../components/PacienteCard'
+import { PacienteContext, PacienteContextProvider, usePaciente } from '../context/PacienteContext';
 
 function PacientePage() {
 
-  const [pacientes, setpacientes] = useState([])
+  const {text, pacientes, loadPacientes} = usePaciente()
 
   useEffect(() => {
-    const loadPacientes = async() => {
-     const pacientes = await getPacientesRequest()
-     setpacientes(pacientes.data)
-    }
     loadPacientes()
   }, [])
 

@@ -13,3 +13,10 @@ export const deletePacienteRequest = async (id) => {
     return await axios.delete(`http://localhost:4000/pacientes/${id}`)
 }
 
+export const getPacienteRequest = async (id) => {
+    return await axios.get(`http://localhost:4000/pacientes/${id}`)
+}
+
+export const updatePacienteRequest = async (id, newFilds) => {
+    return await axios.put(`http://localhost:4000/pacientes/${id}`, newFilds)
+}

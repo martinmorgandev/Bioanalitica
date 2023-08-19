@@ -1,16 +1,12 @@
 import React from "react";
 import { deletePacienteRequest } from "../api/pacientes.api";
+import { usePaciente } from "../context/PacienteContext";
+import {useNavigate} from "react-router-dom"
 
 function PacienteCard({ paciente }) {
 
-    const handleDelete = async(id) => {
-        try {
-           const response = await deletePacienteRequest(id)
-           console.log(response)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    const {pacientes,loadPacientes, deletePaciente} = usePaciente()
+    const navigate = useNavigate()
 
   return (
     <div>
@@ -20,8 +16,8 @@ function PacienteCard({ paciente }) {
       <p>{paciente.medico}</p>
       <p>{paciente.diagnostico}</p>
       <p>{paciente.fecha}</p>
-      <button onClick={() => handleDelete(paciente.id)} className="btn btn-danger">Eliminar</button>
-      <button className="btn btn-warning">Actualizar</button>
+      <button onClick={() => deletePaciente(paciente.id)} className="btn btn-danger">Eliminar</button>
+      <button onClick={() => navigate(`/edit/${paciente.id}`)} className="btn btn-warning">Actualizar</button>
     </div>
   );
 }
