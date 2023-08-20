@@ -29,7 +29,7 @@ function PacienteForm() {
   const onSubmit = async (e) => {
     e.preventDefault()
     // setObjeto()
-    console.log(nombre)
+    // console.log(nombre)
     createNewPaciente({
       nombre: nombre,
       edad: edad,
@@ -56,15 +56,20 @@ function PacienteForm() {
 
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input onChange={(e) => onChange(e)} value={nombre} name='nombre' type="text" placeholder='nombre'/>
-        <input onChange={(e) => onChange(e)} value={edad} name='edad' type="text" placeholder='edad'/>
-        <input onChange={(e) => onChange(e)} value={sexo} name='sexo' type="text" placeholder='sexo'/>
-        <input onChange={(e) => onChange(e)} value={medico} name='medico' type="text" placeholder='medico'/>
-        <input onChange={(e) => onChange(e)} value={diagnostico} name='diagnostico' type="text" placeholder='diagnostico'/>
-        <button type='submit'>Enviar</button>
-      </form>
+    <div className='container'>
+      <div className='row mt-3'>
+        <div className='col-8'>
+          <h1>Registrar Paciente</h1>
+        <form onSubmit={onSubmit}>
+          <input className='form-control form-control-lg mb-3' onChange={(e) => onChange(e)} value={nombre} name='nombre' type="text" placeholder='nombre'/>
+          <input className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={edad} name='edad' type="text" placeholder='edad'/>
+          <input  className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={sexo} name='sexo' type="text" placeholder='sexo'/>
+          <input className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={medico} name='medico' type="text" placeholder='medico'/>
+          <input className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={diagnostico} name='diagnostico' type="text" placeholder='diagnostico'/>
+          <button className='btn btn-primary form-control-lg  mb-3' type='submit'>Guardar Paciente</button>
+         </form>
+        </div>
+      </div>
     </div>
     
   )
