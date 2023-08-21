@@ -20,6 +20,7 @@ export const usePaciente = () => {
 };
 
 export const PacienteContextProvider = ({ children }) => {
+
   const [pacientes, setpacientes] = useState([]);
 
   const loadPacientes = async () => {
@@ -95,7 +96,6 @@ export const PacienteContextProvider = ({ children }) => {
   return (
     <PacienteContext.Provider
       value={{
-        text: "Hello you!",
         pacientes: pacientes,
         loadPacientes: loadPacientes,
         deletePaciente: deletePaciente,

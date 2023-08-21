@@ -1,5 +1,4 @@
 import React from "react";
-import { deletePacienteRequest } from "../api/pacientes.api";
 import { usePaciente } from "../context/PacienteContext";
 import {useNavigate} from "react-router-dom"
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { usePaciente } from "../context/PacienteContext";
+import { usePaciente } from "../../context/PacienteContext";
 import { useNavigate, useParams } from "react-router-dom";
 
 function PacienteEditForm() {
@@ -51,7 +51,7 @@ function PacienteEditForm() {
             medico: medico,
             diagnostico: diagnostico
           });
-          navigate("/")
+          navigate("/listapacientes")
           clear();
     }
   };
@@ -71,46 +71,27 @@ function PacienteEditForm() {
   };
 
   return (
-    <div>
-        <h1>Editar paciente</h1>
-      <form onSubmit={onSubmit}>
-        <input
-          onChange={(e) => onChange(e)}
-          value={nombre}
-          name="nombre"
-          type="text"
-          placeholder="nombre"
-        />
-        <input
-          onChange={(e) => onChange(e)}
-          value={edad}
-          name="edad"
-          type="text"
-          placeholder="edad"
-        />
-        <input
-          onChange={(e) => onChange(e)}
-          value={sexo}
-          name="sexo"
-          type="text"
-          placeholder="sexo"
-        />
-        <input
-          onChange={(e) => onChange(e)}
-          value={medico}
-          name="medico"
-          type="text"
-          placeholder="medico"
-        />
-        <input
-          onChange={(e) => onChange(e)}
-          value={diagnostico}
-          name="diagnostico"
-          type="text"
-          placeholder="diagnostico"
-        />
-        <button type="submit">Enviar</button>
-      </form>
+    <div className='container'>
+      <div className='row mt-3'>
+        <div className='col-12'>
+          <h1>Editar Paciente</h1>
+        <form onSubmit={onSubmit}>
+          <input className='form-control form-control-lg mb-3' onChange={(e) => onChange(e)} value={nombre} name='nombre' type="text" placeholder='nombre'/>
+          <input className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={edad} name='edad' type="number" placeholder='edad'/>
+          {/* <input  className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={sexo} name='sexo' type="text" placeholder='sexo'/> */}
+
+          <select name="sexo" id="sexo" className='form-select form-select-lg mb-3' onChange={(e) => onChange(e)}  value={sexo}>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+          </select>
+
+          <input className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={medico} name='medico' type="text" placeholder='medico'/>
+          <input className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={diagnostico} name='diagnostico' type="text" placeholder='diagnostico'/>
+          <button className='btn btn-primary form-control-lg  mb-3' type='submit'>Guardar Paciente</button>
+         </form>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import axios from "axios"
 
-
 export const getPacientesRequest = async () => {
     return await axios.get('http://localhost:4000/pacientes')
 }
