@@ -15,7 +15,7 @@ function EstudioCard({ estudio }) {
       <td>{estudio.precio}</td>
       <td>
       <button onClick={() => deleteEstudio(estudio.id)} className="btn btn-danger">Eliminar</button>
-      <button onClick={() => navigate(`/edit/${estudio.id}`)} className="btn btn-warning">Actualizar</button>
+      <button onClick={() => navigate(`/edit-estudio/${estudio.id}`)} className="btn btn-warning">Actualizar</button>
       </td>
     </tr>
   );

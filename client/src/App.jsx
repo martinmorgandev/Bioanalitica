@@ -11,6 +11,8 @@ import Home from "./pages/Home";
 import EstudioPage from "./pages/lista-estudios/EstudioPage";
 import { EstudioContextProvider } from "./context/EstudiosContext";
 import EstudioForm from "./pages/lista-estudios/EstudioForm";
+import EstudioEditForm from "./pages/lista-estudios/EstudioEditForm";
+import Carga from "./pages/archivos/Carga";
 
 function App() {
   return (
@@ -55,9 +57,21 @@ function App() {
                   ></Route>
                   <Route
                     path="/edit-estudio/:id"
-                    element={<PacienteEditForm></PacienteEditForm>}
+                    element={<EstudioEditForm></EstudioEditForm>}
                   ></Route>
+
+
+
+                  {/* SUBIR ARCHIVOS */}
+                  <Route
+                    path="/cargadearchivos"
+                    element={<Carga></Carga>}
+                  ></Route>
+
+                  {/* ERROR 404 */}
                   <Route path="*" element={<NotFound></NotFound>}></Route>
+
+
                 </Routes>
               </div>
             </main>

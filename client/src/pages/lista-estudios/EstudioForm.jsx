@@ -46,14 +46,23 @@ function EstudioForm() {
     <div className='container'>
       <div className='row mt-3'>
         <div className='col-12'>
-          <h1>Registrar un nuevo estudio</h1>
-        <form onSubmit={onSubmit}>
-          <input className='form-control form-control-lg mb-3' onChange={(e) => onChange(e)} value={estudio} name='estudio' type="text" placeholder='Estudio'/>
-          <input className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={indicaciones} name='indicaciones' type="text" placeholder='Indicaciones'/>
-          <input className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={tipo_cantidad} name='tipo_cantidad' type="text" placeholder='Tipo y cantidad'/>
-          <input className='form-control form-control-lg  mb-3' onChange={(e) => onChange(e)} value={precio} name='precio' type="number" placeholder='Precio'/>
-          <button className='btn btn-primary form-control-lg  mb-3' type='submit'>Guardar Estudio</button>
-         </form>
+        <div className="card mb-3">
+            <div className="card-body border border-1 rounded">
+              <h3>Registrar un estudio</h3>
+            </div>
+          </div>
+          <div className="card mb-3">
+            <div className="card-body border border-1 rounded border">
+              <form onSubmit={onSubmit}>
+                <input className='form-control form-control-md mb-3' onChange={(e) => onChange(e)} value={estudio} name='estudio' type="text" placeholder='Estudio'/>
+                <input className='form-control form-control-md  mb-3' onChange={(e) => onChange(e)} value={indicaciones} name='indicaciones' type="text" placeholder='Indicaciones'/>
+                <input className='form-control form-control-md  mb-3' onChange={(e) => onChange(e)} value={tipo_cantidad} name='tipo_cantidad' type="text" placeholder='Tipo y cantidad'/>
+                <input className='form-control form-control-md  mb-3' onChange={(e) => onChange(e)} value={precio} name='precio' type="number" placeholder='Precio'/>
+                <button className='btn btn-primary form-control-md  mb-3' type='submit'>Guardar Estudio</button>
+              </form>
+              
+            </div>
+          </div>
         </div>
       </div>
     </div>

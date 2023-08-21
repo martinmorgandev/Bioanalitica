@@ -62,7 +62,7 @@ export const EstudioContextProvider = ({ children }) => {
     }
   };
 
-  const updatePaciente = async (
+  const updateEstudio = async (
     id,
     { estudio, indicaciones, tipo_cantidad, precio }
   ) => {
@@ -87,7 +87,7 @@ export const EstudioContextProvider = ({ children }) => {
         deleteEstudio: deleteEstudio,
         createNewEstudio: createNewEstudio,
         getEstudio: getEstudio,
-        updatePaciente: updatePaciente,
+        updateEstudio: updateEstudio,
       }}
     >
       {children}
