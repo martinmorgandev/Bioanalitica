@@ -44,7 +44,10 @@ export const PacienteContextProvider = ({ children }) => {
     edad,
     sexo,
     medico,
-    diagnostico
+    diagnostico,
+    estudio1,
+    estudio2,
+    estudio3,
   }) => {
     try {
       const result = await createPacienteRequest({
@@ -52,7 +55,10 @@ export const PacienteContextProvider = ({ children }) => {
         edad,
         sexo,
         medico,
-        diagnostico
+        diagnostico,
+        estudio1,
+        estudio2,
+        estudio3,
       });
       console.log(result);
     //   clear();

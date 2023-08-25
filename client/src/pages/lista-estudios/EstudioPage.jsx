@@ -24,7 +24,14 @@ function PacientePage() {
   return (
     <>
       <div className="col">
-        <h1>Lista</h1>
+      <div class="card mb-3 mt-3">
+          {/* <div class="card-body card-body border border-1 rounded ">
+            <h3>Lista de estudios</h3>
+          </div> */}
+          <button class="btn btn-primary" type="button" disabled>
+            <h1>Lista de Estudios</h1>
+            </button>
+        </div>
       </div>
       <div className="table-responsive">
         <table className="table table-striped table-hover">

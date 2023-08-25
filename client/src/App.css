@@ -91,13 +91,13 @@ a{
         min-width: auto;
     }
 
-    .barra-lateral .logo{
+    /* .barra-lateral .logo{
         display: none;
-    }
+    } */
 
-    .barra-lateral .menu a svg{
+    /* .barra-lateral .menu a svg{
         display: none;
-    }
+    } */
     
     
 }

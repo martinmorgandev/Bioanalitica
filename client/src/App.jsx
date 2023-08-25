@@ -64,7 +64,7 @@ function App() {
 
                   {/* SUBIR ARCHIVOS */}
                   <Route
-                    path="/cargadearchivos"
+                    path="/upload"
                     element={<Carga></Carga>}
                   ></Route>
 

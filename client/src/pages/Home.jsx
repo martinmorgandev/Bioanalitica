@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
+import { Grafica } from "../components/Grafica";
 
 function Home() {
   return (
-    <div>
-      <h1>HOME</h1>
+    <div className="container">
+      <div className="row">
+      <button class="btn btn-primary mb-4" type="button" disabled>
+            <h1>Bienvenido</h1>
+          </button>
+
+      <Grafica></Grafica>
+
+      </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

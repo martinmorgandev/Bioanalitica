@@ -47,9 +47,9 @@ function EstudioForm() {
       <div className='row mt-3'>
         <div className='col-12'>
         <div className="card mb-3">
-            <div className="card-body border border-1 rounded">
-              <h3>Registrar un estudio</h3>
-            </div>
+        <button class="btn btn-primary" type="button" disabled>
+            <h1>Registrar un nuevo <span class="badge bg-dark">Estudio</span></h1>
+            </button>
           </div>
           <div className="card mb-3">
             <div className="card-body border border-1 rounded border">
